@@ -2,11 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from dataclasses import dataclass
 
-def calc_lorentzian(frequency: np.ndarray, central_frequency: float, height: float, broadening: float):
-    return height * broadening **2 / ((frequency - central_frequency) **2 + broadening **2)
 
-import itertools
-freq_range = np.arange(start=2.83, stop=2.91, step=1e-5)
+def calc_lorentzian(frequency: np.ndarray, central_frequency: float, height: float, broadening: float):
+    return height * broadening ** 2 / ((frequency - central_frequency) ** 2 + broadening ** 2)
+
+
+freq_range = np.arange(start=2.85, stop=2.89, step=1e-5)
 baseline = 100
 height0 = 20
 central_frequency = 2.87
@@ -17,6 +18,7 @@ def split(central_frequency: float, delta_f: float, multiplicity: int) -> list[f
     factors = [-(multiplicity - 1) / 2 + _ for _ in range(multiplicity)]
     return [central_frequency + factor * delta_f for factor in factors]
 
+
 def calc_height(splittings, height) -> float:
     factor_old = 1
     factor_total = 1
@@ -25,6 +27,7 @@ def calc_height(splittings, height) -> float:
         factor_old = factor_total
     return height / factor_total
 
+
 @dataclass
 class Splitting:
     multiplicity: int
@@ -32,9 +35,9 @@ class Splitting:
 
 
 nitrogen_splitting = Splitting(3, 2.12e-3)
-carbon1_splitting = Splitting(2, 4e-3)
-carbon2_splitting = Splitting(2, 14.0e-3)
-carbon3_splitting = Splitting(2, 5e-3)
+carbon1_splitting = Splitting(2, 4.2e-3)
+carbon2_splitting = Splitting(2, 2.4e-3)
+carbon3_splitting = Splitting(2, 0.9e-3)
 
 splittings = (
     nitrogen_splitting,
@@ -68,7 +71,7 @@ for freq in all_freqs:
 spectrum = baseline - lorentzians
 
 plt.plot(freq_range, spectrum)
-# for i in range(len(carbon_splitted_frequencies)):
-#     plt.plot(freq_range, lorentzians[f'lorentzian{i}'])
-plt.show()
+# plt.savefig('C:/Users/rober/Documents/Aufbau_QC/Pulsed tests/simulierte NMR-Spektren/8.9+2x0.9MHz.png',
+#               format='png')
 
+plt.show()
