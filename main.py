@@ -34,16 +34,21 @@ class Splitting:
     delta_f: float
 
 
-nitrogen_splitting = Splitting(3, 2.12e-3)
-carbon1_splitting = Splitting(2, 4.2e-3)
-carbon2_splitting = Splitting(2, 2.4e-3)
-carbon3_splitting = Splitting(2, 0.9e-3)
+#  nitrogen_splitting = Splitting(3, 2.12e-3)
+double_NV_splitting = Splitting(2, 200e-6)
+nitrogen_splitting = Splitting(2, 3.1e-3)
+# carbon1_splitting = Splitting(2, 4.2e-3)
+#  carbon2_splitting = Splitting(2, 13.7e-3)
+# carbon3_splitting = Splitting(2, 13.7e-3)
+#  carbon4_splitting = Splitting(2, 2.4e-3)
 
 splittings = (
+    double_NV_splitting,
     nitrogen_splitting,
-    carbon1_splitting,
-    carbon2_splitting,
-    carbon3_splitting
+#    carbon1_splitting,
+#    carbon2_splitting,
+#   carbon3_splitting,
+   # carbon4_splitting
 )
 
 
