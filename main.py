@@ -9,7 +9,7 @@ def calc_lorentzian(frequency: np.ndarray, central_frequency: float, height: flo
 
 freq_range = np.arange(start=2.85, stop=2.89, step=1e-5)
 baseline = 100
-height0 = 20
+height0 = 55
 central_frequency = 2.87
 broadening = 300e-6
 
@@ -37,7 +37,7 @@ class Splitting:
 nitrogen_splitting = Splitting(3, 2.12e-3)
 #  double_NV_splitting = Splitting(2, 200e-6)
 #  nitrogen_splitting = Splitting(2, 3.0e-3)
-carbon1_splitting = Splitting(2, 5.7e-3)
+carbon1_splitting = Splitting(2, 4.2e-3)
 carbon2_splitting = Splitting(2, 13.7e-3)
 # carbon3_splitting = Splitting(2, 2.4e-3)
 # carbon4_splitting = Splitting(2, 2.4e-3)
