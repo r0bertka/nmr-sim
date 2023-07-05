@@ -74,12 +74,13 @@ for i in range(number_of_datasets):
 
     spectrum = baseline - lorentzians
     noise = -noise_level_percentage / 2 + noise_level_percentage * np.random.random(len(freq_range))
-    dataset = [f'{freq_range[_]} \t {spectrum[_] + noise[_]}' for _ in range(len(freq_range))]
+    dataset = [f'{round(freq_range[_], 4)} \t {spectrum[_] + noise[_]}' for _ in range(len(freq_range))]
 
     file_name = f'training_dataset_spectrum_{i}.dat'
     with open(f'training\\{file_name}', 'w') as file:
         file.write(f'Carbon 1: {min(round(carbon_splitting1.delta_f * 1e3, 2), round(carbon_splitting2.delta_f * 1e3, 2))} MHz\n')
         file.write(f'Carbon 2: {max(round(carbon_splitting1.delta_f * 1e3, 2), round(carbon_splitting2.delta_f * 1e3, 2))} MHz\n')
+        file.write('\n')
         file.write('frequency (GHz) \t norm. intensity (arb. u.)\n')
         for line in dataset:
             file.write(f'{line}\n')
