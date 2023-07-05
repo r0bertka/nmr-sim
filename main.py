@@ -11,7 +11,7 @@ freq_range = np.arange(start=2.85, stop=2.89, step=1e-5)
 baseline = 100
 height0 = 20
 central_frequency = 2.87
-broadening = 500e-6
+broadening = 300e-6
 
 
 def split(central_frequency: float, delta_f: float, multiplicity: int) -> list[float]:
@@ -34,20 +34,20 @@ class Splitting:
     delta_f: float
 
 
-#  nitrogen_splitting = Splitting(3, 2.12e-3)
-double_NV_splitting = Splitting(2, 200e-6)
-nitrogen_splitting = Splitting(2, 3.1e-3)
-# carbon1_splitting = Splitting(2, 4.2e-3)
-#  carbon2_splitting = Splitting(2, 13.7e-3)
-# carbon3_splitting = Splitting(2, 13.7e-3)
-#  carbon4_splitting = Splitting(2, 2.4e-3)
+nitrogen_splitting = Splitting(3, 2.12e-3)
+#  double_NV_splitting = Splitting(2, 200e-6)
+#  nitrogen_splitting = Splitting(2, 3.0e-3)
+carbon1_splitting = Splitting(2, 5.7e-3)
+carbon2_splitting = Splitting(2, 13.7e-3)
+# carbon3_splitting = Splitting(2, 2.4e-3)
+# carbon4_splitting = Splitting(2, 2.4e-3)
 
 splittings = (
-    double_NV_splitting,
+#      double_NV_splitting,
     nitrogen_splitting,
-#    carbon1_splitting,
-#    carbon2_splitting,
-#   carbon3_splitting,
+    carbon1_splitting,
+    carbon2_splitting,
+    #carbon3_splitting,
    # carbon4_splitting
 )
 
