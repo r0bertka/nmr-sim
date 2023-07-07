@@ -37,8 +37,8 @@ class Splitting:
 nitrogen_splitting = Splitting(3, 2.12e-3)
 #  double_NV_splitting = Splitting(2, 200e-6)
 #  nitrogen_splitting = Splitting(2, 3.0e-3)
-carbon1_splitting = Splitting(2, 4.2e-3)
-carbon2_splitting = Splitting(2, 13.7e-3)
+carbon1_splitting = Splitting(2, 3.3e-3)
+carbon2_splitting = Splitting(2, 8.7e-3)
 # carbon3_splitting = Splitting(2, 2.4e-3)
 # carbon4_splitting = Splitting(2, 2.4e-3)
 
